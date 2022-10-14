@@ -8,14 +8,9 @@
 //a = -3 b = 9 -> нет
 
 Console.Write("Введите первое целое число: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите второе целое число: ");
 int a = Convert.ToInt32(Console.ReadLine());
-if (a == b*b)
-{
-    Console.Write("Верно");
-}
-else 
-{
-    Console.Write("Не верно");
-}
+Console.Write("Введите второе целое число: ");
+int b = Convert.ToInt32(Console.ReadLine());
+
+if (a == b*b) Console.Write("Верно");
+else Console.Write("Не верно");
