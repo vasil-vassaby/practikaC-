@@ -10,10 +10,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 if (number > 100 && number < 1000)
 {
-    int tu = number % 10; // выводится остаток от деления
-    Console.WriteLine($"Последняя цифра числа {number} -> {tu}");
+    int  LastDigits = number % 10; // выводится остаток от деления
+    Console.WriteLine($"Последняя цифра числа {number} -> {LastDigits}");
 }
-else
-{
-    Console.WriteLine("Введите трехзначное число!");
-}
+else Console.WriteLine("Введите трехзначное число!");
