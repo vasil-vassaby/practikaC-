@@ -4,18 +4,18 @@
 //4 -> "-4, -3, -2, -1, 0, 1, 2, 3, 4"
 //2 -> " -2, -1, 0, 1, 2"
 
-Console.WriteLine("Введите число: ");
+Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 int count = -number;
 
 if (number > 0)
+{
+    Console.Write($"Все целые числа в промежутке от -{number} до {number}:  ");
     while (count <= number)
     {
-        Console.Write($"{count}");
+        Console.Write($"{count} ");
         count++;
     }
-else
-{
-    Console.WriteLine("Введите положительное число: ");
 }
+else Console.WriteLine("Введите положительное число: ");
