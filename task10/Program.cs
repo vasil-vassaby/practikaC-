@@ -9,7 +9,8 @@
 Console.Clear();
 Console.Write("Введите трехзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-Console.Write($"Вторая цифра числа {number} = ");
+
+Console.Write($"Вторая цифра числа {number} => ");
 int SecondDigit(int num)
 {
     int num1 = num/10; // 456/10 = 45

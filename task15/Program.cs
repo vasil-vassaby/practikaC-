@@ -6,18 +6,21 @@
 // 7 -> да
 // 1 -> нет
 
+bool Weekend (int num)
+{
+    if (num ==6 || num ==7) return true;
+    return false;
+}
+
 Console.Clear();
 Console.Write("Введите цифру: ");
 int digit = Convert.ToInt32(Console.ReadLine());
 
-if (digit <=5) 
+if (digit<1 || digit > 7) Console.Write("Введите цифру от 1 до 7!");
+else
 {
-    Console.Write("Это выходной => ");
-    Console.Write("Нет");
+bool result = Weekend(digit);
+Console.Write($"Это выходной => ");
+if (result) Console.Write("Да");
+else Console.Write("Нет");
 }
-else if (digit > 5 && digit <= 7) 
-{
-    Console.Write("Это выходной => ");
-    Console.Write("Да");
-}
-else Console.Write("Введите цифру от 1 до 7!");
