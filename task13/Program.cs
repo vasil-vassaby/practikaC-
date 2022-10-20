@@ -17,11 +17,13 @@ int ThirdDigit(int num)
 
 Console.Clear();
 Console.Write("Введите целое число: ");
-int number = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+int number = Convert.ToInt32(Console.ReadLine());
 
-if (number < 100) Console.Write("Третьей цифры нет");      
+int digit =  Math.Abs(number); // в случае ввода отрицательного числа
+
+if (digit < 100) Console.Write("Третьей цифры нет");      
 else 
 {
-    int result = ThirdDigit(number);
+    int result = ThirdDigit(digit);
     Console.Write($"Третья цифра числа {number} => {result}");
 }
