@@ -17,5 +17,5 @@ Console.Write("y2: ");
 int y2 = Convert.ToInt32(Console.ReadLine());
 
 double hypotenuse = Math.Sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)); // вычисление квадратного корня из суммы квадратов катетов, чтобы найти гипотенузу
-double result = Math.Round(hypotenuse, 2, MidpointRounding.ToZero); // округление значения до ближайшего целого числа или до определенного числа дробных цифр, в данном случае до сотых
-Console.WriteLine($"A ({x1},{y1}); B ({x2},{y2}) -> {res}");
+double result = Math.Round(hypotenuse, 2, MidpointRounding.ToZero); // округление значения до определенного числа цифр после запятой, в данном случае до сотых
+Console.WriteLine($"A ({x1},{y1}); B ({x2},{y2}) -> {result}");

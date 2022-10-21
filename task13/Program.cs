@@ -8,6 +8,7 @@
 int ThirdDigit(int num)
 {
     if (num > 100 && num < 1000) return num%10;
+    else if (num < 100) return 0;
     else
     {
         while (num > 1000) num = num/10;
@@ -21,9 +22,8 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int digit =  Math.Abs(number); // в случае ввода отрицательного числа
 
-if (digit < 100) Console.Write("Третьей цифры нет");      
-else 
-{
-    int result = ThirdDigit(digit);
-    Console.Write($"Третья цифра числа {number} => {result}");
-}
+int result = ThirdDigit(digit);
+string res = result > 0 
+             ? $"Третья цифра числа {number} => {result}"
+             : "Третьей цифры нет";
+Console.Write(res);
