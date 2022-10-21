@@ -7,23 +7,19 @@
 
 int ThirdDigit(int num)
 {
-    if (num > 100 && num < 1000) return num%10;
-    else if (num < 100) return 0;
-    else
-    {
-        while (num > 1000) num = num/10;
-        return num%10;
-    }
+    while (num > 1000) num = num / 10;
+    return num % 10;
 }
 
 Console.Clear();
 Console.Write("Введите целое число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int digit =  Math.Abs(number); // в случае ввода отрицательного числа
+int digit = Math.Abs(number); // в случае ввода отрицательного числа
 
-int result = ThirdDigit(digit);
-string res = result > 0 
-             ? $"Третья цифра числа {number} => {result}"
-             : "Третьей цифры нет";
-Console.Write(res);
+if (digit > 99)
+{
+    int result = ThirdDigit(digit);
+    Console.Write($"Третья цифра числа {number} => {result}");
+}
+else Console.Write("Третьей цифры нет");
