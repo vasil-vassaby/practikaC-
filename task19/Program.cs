@@ -10,9 +10,7 @@ Console.Clear();
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-void Palindrome(int num)
-{
-if (num >= 10000 && num < 100000)
+bool Palindrome(int num)
 {
     int num1 = num;
     int num2 = 0;
@@ -21,9 +19,14 @@ if (num >= 10000 && num < 100000)
         num2 = num2 * 10 + num1 % 10;
         num1 = num1 / 10;
     }
-    if (num2 == num) Console.Write($"Число {num} является палиндромом");
-    else Console.Write($"Число {num} не является палиндромом");
+    if (num2 == num) return true;
+    return false;
+}
+
+if (number >= 10000 && number < 100000)
+{
+    bool result = Palindrome(number);
+    if (result) Console.Write($"Число {number} является палиндромом");
+    else Console.Write($"Число {number} не является палиндромом");
 }
 else Console.Write("Введите натуральное пятизначное число!");
-}
-Palindrome(number);
