@@ -17,6 +17,7 @@ void TableOfCubes(int num)
 {
     for (int i = 1; i <= num; i++) Console.WriteLine($"{i, 2} | {Math.Pow(i, 3)}");
 }
+
 if (number > 0)
 {
     Console.WriteLine($"Таблица кубов чисел от 1 до {number}");
