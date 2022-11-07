@@ -7,7 +7,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int SumNumbers(int num) 
 {
-    int sum = default;
+    int sum = default; //если накопитель, в счетчике нельзя использовать
     for (int i = 1; i <= num; i++) sum += i;
     return sum;
 }
