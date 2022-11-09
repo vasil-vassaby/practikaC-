@@ -14,8 +14,6 @@ int numberA = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число B: ");
 int numberB = Convert.ToInt32(Console.ReadLine());
 
-numberB = Math.Abs(numberB);
-
 int NumberInPower(int numA, int numB)
 {
     int count = 0;
@@ -28,5 +26,9 @@ int NumberInPower(int numA, int numB)
     return numC;
 }
 
+if (numberB >= 0)
+{
 int numberInPower = NumberInPower(numberA, numberB);
 Console.WriteLine($"Число {numberA} в натуральной степени {numberB} = {numberInPower}");
+}
+else Console.WriteLine($"Введите натуральное число В!");
