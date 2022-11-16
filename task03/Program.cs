@@ -5,6 +5,7 @@
 
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
+
 if (number == 1) Console.Write("Понедельник");
 else if (number == 2) Console.Write("Вторник");
 else if (number == 3) Console.Write("Среда");
