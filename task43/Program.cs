@@ -14,11 +14,12 @@ double b2 = Convert.ToDouble(Console.ReadLine());
 Console.Write("Введите значение k2: ");
 double k2 = Convert.ToDouble(Console.ReadLine());
 
-void PointIntersectionLines(double b1, double k1, double b2, double k2)
+double[] PointIntersectionLines(double b1, double k1, double b2, double k2)
 {
     double y = (k1 * b2 - k2 * b1) / (k1 - k2);
     double x = (y - b1) / k1;
-    Console.WriteLine($"Точка пересечения двух прямых -> ({Math.Round(x, 1)}; {Math.Round(y, 1)})");
+    return new[] { x, y };
 }
 
-PointIntersectionLines(b1, k1, b2, k2);
+double[] pointIntersectionLines = PointIntersectionLines(b1, k1, b2, k2);
+Console.WriteLine($"Точка пересечения двух прямых -> ({pointIntersectionLines[0]}; {pointIntersectionLines[1]})");
