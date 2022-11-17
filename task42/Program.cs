@@ -4,8 +4,8 @@
 // 3 -> 11
 // 2 -> 10
 
-Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
 
 // int ConvertToBin(int num)
 // {
@@ -34,39 +34,39 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 // Console.Write(ReverseNumber(ConvertToBin(number)));
 
-int ReverseNumber(int num2)
-{
-    int result = default;
-    while (num2 > 9)
-    {
-        result += num2 % 10;
-        result *= 10;
-        num2 /= 10;
-    }
-    result += num2 % 10;
-    return result;
-}
+// int ReverseNumber(int num2)
+// {
+//     int result = default;
+//     while (num2 > 9)
+//     {
+//         result += num2 % 10;
+//         result *= 10;
+//         num2 /= 10;
+//     }
+//     result += num2 % 10;
+//     return result;
+// }
 
 
-int ConvertToBin(int num)
-{
-    int res = default;
+// int ConvertToBin(int num)
+// {
+//     int res = default;
 
-    while (num > 0)
-    {
-        res += num % 2;
-        res *= 10;
-        num /= 2;
-        ConvertToBin(num);
-    }
-    return res;
-}
+//     while (num > 0)
+//     {
+//         res += num % 2;
+//         res *= 10;
+//         num /= 2;
+//         ConvertToBin(num);
+//     }
+//     return res;
+// }
 
-int result = ConvertToBin(number);
-int number2 = ReverseNumber(result);
-Console.WriteLine(result);
+// int result = ConvertToBin(number);
+// int number2 = ReverseNumber(result);
+// Console.WriteLine(result);
 
-Console.WriteLine(" введите число в десятичной системе");
+Console.Write("Введите число в десятичной системе: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 int Binare(int num)
@@ -82,4 +82,4 @@ int Binare(int num)
     int bin = Convert.ToInt32(st);
     return bin;
 }
-System.Console.WriteLine($"Число {number} в двоичной системе выглядит {Binare(number)}");
+Console.WriteLine($"Число {number} в двоичной системе выглядит {Binare(number)}");

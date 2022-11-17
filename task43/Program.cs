@@ -14,7 +14,7 @@ double b2 = Convert.ToDouble(Console.ReadLine());
 Console.Write("Введите значение k2: ");
 double k2 = Convert.ToDouble(Console.ReadLine());
 
-double[] PointIntersectionLines(double b1, double k1, double b2, double k2) мо
+double[] PointIntersectionLines(double b1, double k1, double b2, double k2)
 {
     double y = (k1 * b2 - k2 * b1) / (k1 - k2);
     double x = (y - b1) / k1;
