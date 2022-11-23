@@ -42,16 +42,13 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int SearchingElementArray(int[,] matrix)
+bool SearchingElementArray(int[,] matrix)
 {
-    int rows = matrix.GetLength(0);
-    int columns = matrix.GetLength(1);
-    if (i < rows && j < columns) return matrix[i,j];
-    else  return 0;
+    return i < matrix.GetLength(0) && j < matrix.GetLength(1);
 }
 
-int[,] array2D = CreateMatrixRndInt(3, 4, 1, 9);
+int[,] array2D = CreateMatrixRndInt(3, 4, 0, 9);
 PrintMatrix(array2D);
 
-int result = SearchingElementArray(array2D);
-Console.WriteLine(result == 0 ? "Такого элемента в массиве нет!" : $"Элемент равен {result}");
+bool result = SearchingElementArray(array2D);
+Console.WriteLine(result == false ? "Такого элемента в массиве нет!" : $"Элемент равен {array2D[i,j]}");
