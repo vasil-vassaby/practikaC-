@@ -41,7 +41,7 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[] IndexMinElementMatrix(int[,] matrix)
+int[] IndexMinElementMatrix(int[,] matrix) //нахождение минимального элемента
 {
     int min = matrix[0, 0];
     int[] minIndex = new int[2];
@@ -71,52 +71,53 @@ void PrintArray(int[] array) //печать одномерного массив�
 }
 
 
-int[,] CreateMatrixMax(int[,] matrix, int m, int n)
+int[,] NewMatrix(int[,] matrix, int[] array)
 {
-    int[,] matrixMax = new int[matrix.GetLength(0)-1, matrix.GetLength(1)-1];
-    int countHor=0;
-    int countVer=0;
+    int[,] matrixMax = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
+    int countHor = 0;
+    int countVer = 0;
     for (int i = 0; i < matrixMax.GetLength(0); i++)
     {
-        if (countHor==m) countHor ++;
+        if (countHor == array[0]) countHor++;
         for (int j = 0; j < matrixMax.GetLength(1); j++)
         {
-            if (countVer==n) countVer ++;
+            if (countVer == array[1]) countVer++;
             {
-                matrixMax[i, j] = matrix[countHor, countVer]; 
+                matrixMax[i, j] = matrix[countHor, countVer];
             }
-            countVer ++;               
+            countVer++;
         }
-        countVer = 0; 
-        countHor ++;
-    } 
+        countVer = 0;
+        countHor++;
+    }
     return matrixMax;
 }
 
 
-int[,] array2D = CreateMatrixRndInt(3, 4, 1, 9);
+int[,] array2D = CreateMatrixRndInt(3, 3, 1, 9);
 PrintMatrix(array2D);
 Console.WriteLine();
 int[] minIndex = IndexMinElementMatrix(array2D);
 PrintArray(minIndex);
+Console.WriteLine();
 int[,] newMatrix = NewMatrix(array2D, minIndex);
 PrintMatrix(newMatrix);
 
-int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
-{
-    int[,,] matrix = new int[rows, columns, depth];
-    Random rnd = new Random();
+// int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max)
+// {
+//     int[,,] matrix = new int[rows, columns, depth];
+//     Random rnd = new Random();
 
-    for (int i = 0; i < matrix.GetLength(0); i++) // 2
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++) // 
-        {
-            for (int k = 0; k < matrix.GetLength(2); k++)
-            {
-                matrix[i, j, k] = rnd.Next(min, max + 1); // 2 - 3
-            }
-            
-        }
-    }
-    return matrix;
-}
+//     for (int i = 0; i < matrix.GetLength(0); i++) // 2
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++) // 
+//         {
+//             for (int k = 0; k < matrix.GetLength(2); k++)
+//             {
+//                 matrix[i, j, k] = rnd.Next(min, max + 1); // 2 - 3
+//             }
+
+//         }
+//     }
+//     return matrix;
+// }

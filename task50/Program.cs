@@ -51,4 +51,4 @@ int[,] array2D = CreateMatrixRndInt(3, 4, 0, 9);
 PrintMatrix(array2D);
 
 bool result = SearchingElementArray(array2D);
-Console.WriteLine(result == false ? "Такого элемента в массиве нет!" : $"Элемент равен {array2D[i,j]}");
+Console.WriteLine(result == false ? $"{i}, {j} -> такого элемента в массиве нет!" : $"Элемент равен {array2D[i,j]}");
