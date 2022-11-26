@@ -37,40 +37,22 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-void SortInDescendingElementsEachRows(int[,] matrix)
+void SortElementsRowsToLower(int[,] matrix)
 {
-    int[] arr = new int[matrix.GetLength(1)];
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            arr[j] = matrix[i, j];
-        }
-        SortMaxMin(arr);
-        ReplacingValuesInRows(true, i, arr, matrix);
-    }
-}
-
-void SortMaxMin(int[] array) //сортировка временного одномерного массива по убыванию
-{
-    for (int i = 0; i < array.Length; i++)
-        for (int j = 0; j < array.Length - i - 1; j++)
-        {
-            if (array[j] < array[j + 1])
+            for (int k = 0; k < matrix.GetLength(1) - 1; k++)
             {
-                int temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
+                if (matrix[i, k] < matrix[i, k + 1])
+                {
+                    int temp = matrix[i, k + 1];
+                    matrix[i, k + 1] = matrix[i, k];
+                    matrix[i, k] = temp;
+                }
             }
         }
-}
-
-void ReplacingValuesInRows(bool fulfillmentCondition, int posRow, int[] array, int[,] matrix) //меняем значения в строке исходного массива на отсортированные значения
-{
-    for (int k = 0; k < array.Length; k++)
-    {
-        if (fulfillmentCondition) matrix[posRow, k] = array[k];
-        else matrix[k, posRow] = array[k];
     }
 }
 
@@ -78,5 +60,5 @@ int[,] array2D = CreateMatrixRndInt(3, 4, 1, 9);
 Console.WriteLine("Задан массив: ");
 PrintMatrix(array2D);
 Console.WriteLine("Новый массив: ");
-SortInDescendingElementsEachRows(array2D);
+SortElementsRowsToLower(array2D);
 PrintMatrix(array2D);
